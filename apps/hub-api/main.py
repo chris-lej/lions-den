@@ -176,7 +176,7 @@ async def health_check():
     return {
         "status": "healthy",
         "service": "hub-api",
-        "current_state": current_state if current_state else "UNKNOWN"
+        "current_state": current_state.state if current_state else "UNKNOWN"
     }
 
 
