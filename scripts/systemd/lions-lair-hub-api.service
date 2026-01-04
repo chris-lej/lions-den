@@ -1,0 +1,16 @@
+[Unit]
+Description=Lion's Lair Concierge Hub API
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/lions-lair-concierge/hub-api
+Environment="PATH=/home/pi/lions-lair-concierge/hub-api/venv/bin"
+ExecStart=/home/pi/lions-lair-concierge/hub-api/venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+

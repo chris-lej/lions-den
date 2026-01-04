@@ -41,7 +41,19 @@ export class EventStreamService {
   private eventSubject = new Subject<ConciergeEvent>();
   public events$: Observable<ConciergeEvent> = this.eventSubject.asObservable();
   
-  private hubApiUrl = 'http://localhost:8000';
+  private hubApiUrl = this.getHubApiUrl();
+
+  private getHubApiUrl(): string {
+    // In production, use environment configuration
+    if (typeof window !== 'undefined') {
+      // If served from same origin, use relative URL for API
+      const apiPort = window.location.port === '80' || window.location.port === '' 
+        ? '8000' 
+        : '8000';
+      return `${window.location.protocol}//${window.location.hostname}:${apiPort}`;
+    }
+    return 'http://localhost:8000';
+  }
 
   /**
    * Connect to the SSE event stream from hub-api.

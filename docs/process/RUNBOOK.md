@@ -96,6 +96,22 @@ Open the kiosk UI at `http://localhost:4201` and check the browser console. You 
 - "Connected to event stream"
 - Presence state changes when you trigger simulator endpoints
 
-## Production Deployment (Future - Slice 5)
+## Production Deployment (Slice 5)
 
-TBD - Will be documented in Slice 5: Packaging for Pi
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete Raspberry Pi deployment instructions.
+
+### Quick Deploy
+
+1. Build production artifacts:
+```bash
+./scripts/build-production.sh
+```
+
+2. Deploy to Pi:
+```bash
+./scripts/deploy-pi.sh [pi-hostname] [pi-user]
+```
+
+3. Access:
+- Kiosk UI: `http://[pi-ip-address]`
+- Hub API: `http://[pi-ip-address]:8000`

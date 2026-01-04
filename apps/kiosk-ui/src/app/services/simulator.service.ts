@@ -11,7 +11,17 @@ export interface SimulatorResponse {
   providedIn: 'root'
 })
 export class SimulatorService {
-  private readonly API_BASE_URL = 'http://localhost:8000/api';
+  private readonly API_BASE_URL = this.getApiBaseUrl();
+
+  private getApiBaseUrl(): string {
+    if (typeof window !== 'undefined') {
+      const apiPort = window.location.port === '80' || window.location.port === '' 
+        ? '8000' 
+        : '8000';
+      return `${window.location.protocol}//${window.location.hostname}:${apiPort}/api`;
+    }
+    return 'http://localhost:8000/api';
+  }
 
   constructor(private http: HttpClient) {}
 
