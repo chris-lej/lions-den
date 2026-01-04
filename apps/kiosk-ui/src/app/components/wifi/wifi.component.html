@@ -1,85 +1,71 @@
-<nb-layout>
-  <nb-layout-column>
-    <div class="wifi-container">
-      <nb-card class="wifi-card">
-        <nb-card-header>
-          <div class="header-content">
-            <nb-icon icon="wifi-outline" class="header-icon"></nb-icon>
-            <h1>Wi-Fi Information</h1>
+<div class="wifi-container">
+  <mat-card class="wifi-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="header-icon">wifi</mat-icon>
+        <h1>Wi-Fi Information</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="wifi-info">
+        <div class="info-section">
+          <label>Network Name (SSID)</label>
+          <div class="value-container">
+            <mat-form-field appearance="outline" class="wifi-input">
+              <input matInput [value]="wifiNetwork" readonly />
+            </mat-form-field>
+            <button 
+              mat-icon-button 
+              (click)="copyToClipboard(wifiNetwork)"
+              title="Copy to clipboard"
+            >
+              <mat-icon>content_copy</mat-icon>
+            </button>
           </div>
-        </nb-card-header>
-        <nb-card-body>
-          <div class="wifi-info">
-            <div class="info-section">
-              <label>Network Name (SSID)</label>
-              <div class="value-container">
-                <input 
-                  nbInput 
-                  type="text" 
-                  [value]="wifiNetwork" 
-                  readonly
-                  class="wifi-input"
-                />
-                <button 
-                  nbButton 
-                  status="basic" 
-                  size="small"
-                  (click)="copyToClipboard(wifiNetwork)"
-                  title="Copy to clipboard"
-                >
-                  <nb-icon icon="copy-outline"></nb-icon>
-                </button>
-              </div>
-            </div>
+        </div>
 
-            <div class="info-section">
-              <label>Password</label>
-              <div class="value-container">
-                <input 
-                  nbInput 
-                  [type]="showPassword ? 'text' : 'password'" 
-                  [value]="wifiPassword" 
-                  readonly
-                  class="wifi-input"
-                />
-                <button 
-                  nbButton 
-                  status="basic" 
-                  size="small"
-                  (click)="togglePasswordVisibility()"
-                  [title]="showPassword ? 'Hide password' : 'Show password'"
-                >
-                  <nb-icon [icon]="showPassword ? 'eye-off-outline' : 'eye-outline'"></nb-icon>
-                </button>
-                <button 
-                  nbButton 
-                  status="basic" 
-                  size="small"
-                  (click)="copyToClipboard(wifiPassword)"
-                  title="Copy to clipboard"
-                >
-                  <nb-icon icon="copy-outline"></nb-icon>
-                </button>
-              </div>
-            </div>
-
-            <div class="help-text">
-              <p>
-                <nb-icon icon="info-outline"></nb-icon>
-                Tap the copy buttons to copy the network name or password to your clipboard.
-              </p>
-            </div>
+        <div class="info-section">
+          <label>Password</label>
+          <div class="value-container">
+            <mat-form-field appearance="outline" class="wifi-input">
+              <input 
+                matInput 
+                [type]="showPassword ? 'text' : 'password'" 
+                [value]="wifiPassword" 
+                readonly
+              />
+            </mat-form-field>
+            <button 
+              mat-icon-button 
+              (click)="togglePasswordVisibility()"
+              [title]="showPassword ? 'Hide password' : 'Show password'"
+            >
+              <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <button 
+              mat-icon-button 
+              (click)="copyToClipboard(wifiPassword)"
+              title="Copy to clipboard"
+            >
+              <mat-icon>content_copy</mat-icon>
+            </button>
           </div>
-        </nb-card-body>
-      </nb-card>
+        </div>
 
-      <div class="back-button">
-        <button nbButton status="primary" size="large" routerLink="/menu">
-          <nb-icon icon="arrow-back-outline"></nb-icon>
-          Back to Menu
-        </button>
+        <div class="help-text">
+          <p>
+            <mat-icon>info</mat-icon>
+            Tap the copy buttons to copy the network name or password to your clipboard.
+          </p>
+        </div>
       </div>
-    </div>
-  </nb-layout-column>
-</nb-layout>
+    </mat-card-content>
+  </mat-card>
 
+  <div class="back-button">
+    <button mat-raised-button color="primary" routerLink="/menu">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Menu
+    </button>
+  </div>
+</div>

@@ -7,11 +7,11 @@
 .manual-header {
   margin-bottom: 2rem;
   
-  nb-card-header {
+  mat-card-header {
     padding: 2rem;
     text-align: center;
     
-    .header-content {
+    mat-card-title {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -20,6 +20,8 @@
       
       .header-icon {
         font-size: 3rem;
+        width: 3rem;
+        height: 3rem;
         color: #667eea;
       }
       
@@ -43,15 +45,12 @@
   margin-bottom: 2rem;
   
   ::ng-deep {
-    .accordion-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    .mat-expansion-panel-header {
       font-size: 1.2rem;
       font-weight: 500;
       
-      nb-icon {
-        font-size: 1.5rem;
+      mat-icon {
+        margin-right: 1rem;
         color: #667eea;
       }
     }
@@ -76,4 +75,3 @@
     min-width: 200px;
   }
 }
-

@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { 
-  NbCardModule, 
-  NbButtonModule, 
-  NbLayoutModule, 
-  NbThemeModule,
-  NbIconModule,
-  NbInputModule
-} from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 /**
  * Wi-Fi Information component displaying network name and password.
@@ -21,13 +17,11 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
   imports: [
     CommonModule, 
     RouterModule, 
-    NbCardModule, 
-    NbButtonModule, 
-    NbLayoutModule, 
-    NbThemeModule,
-    NbIconModule,
-    NbInputModule,
-    NbEvaIconsModule
+    MatCardModule, 
+    MatButtonModule, 
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   templateUrl: './wifi.component.html',
   styleUrl: './wifi.component.scss'

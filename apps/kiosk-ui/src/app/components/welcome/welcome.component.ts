@@ -2,13 +2,10 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { 
-  NbCardModule, 
-  NbInputModule, 
-  NbButtonModule, 
-  NbLayoutModule,
-  NbThemeModule 
-} from '@nebular/theme';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { WelcomeStateService } from '../../services/welcome-state.service';
 
 /**
@@ -21,11 +18,10 @@ import { WelcomeStateService } from '../../services/welcome-state.service';
   imports: [
     CommonModule,
     FormsModule,
-    NbCardModule,
-    NbInputModule,
-    NbButtonModule,
-    NbLayoutModule,
-    NbThemeModule
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss'
@@ -57,4 +53,3 @@ export class WelcomeComponent {
     this.router.navigate(['/menu']);
   }
 }
-

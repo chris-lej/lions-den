@@ -1,13 +1,12 @@
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
 import { EventStreamService, PresenceStateEvent } from './services/event-stream.service';
 import { WelcomeStateService } from './services/welcome-state.service';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NbLayoutModule, NbThemeModule],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

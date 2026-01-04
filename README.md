@@ -12,7 +12,7 @@ Lion's Lair Concierge is a local-first hybrid system that:
 
 ## Architecture
 
-- **Frontend**: Angular + Nebular kiosk UI (`apps/kiosk-ui`)
+- **Frontend**: Angular + Material Design kiosk UI (`apps/kiosk-ui`)
 - **Backend**: Python local hub API (`apps/hub-api`)
 - **Shared**: Common libraries and types (`libs/shared`)
 - **Hardware**: Raspberry Pi hub with Zigbee sensors (mocked during development)

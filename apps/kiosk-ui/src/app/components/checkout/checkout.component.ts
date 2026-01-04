@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { 
-  NbCardModule, 
-  NbButtonModule, 
-  NbLayoutModule, 
-  NbThemeModule,
-  NbIconModule,
-  NbListModule
-} from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 /**
  * Checkout Instructions component.
@@ -21,13 +16,10 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
   imports: [
     CommonModule, 
     RouterModule, 
-    NbCardModule, 
-    NbButtonModule, 
-    NbLayoutModule, 
-    NbThemeModule,
-    NbIconModule,
-    NbListModule,
-    NbEvaIconsModule
+    MatCardModule, 
+    MatButtonModule, 
+    MatIconModule,
+    MatListModule
   ],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
@@ -39,32 +31,32 @@ export class CheckoutComponent {
 
   instructions = [
     {
-      icon: 'clock-outline',
+      icon: 'schedule',
       title: 'Checkout Time',
       description: `Please check out by ${this.checkoutTime} on your departure date.`
     },
     {
-      icon: 'home-outline',
+      icon: 'home',
       title: 'Leave Keys',
       description: 'Please leave all keys on the kitchen counter or in the lockbox.'
     },
     {
-      icon: 'trash-2-outline',
+      icon: 'delete',
       title: 'Dispose of Trash',
       description: 'Please take out trash and place in the designated bins outside.'
     },
     {
-      icon: 'droplet-outline',
+      icon: 'restaurant',
       title: 'Dishes',
       description: 'Please wash and put away any dishes you used during your stay.'
     },
     {
-      icon: 'thermometer-outline',
+      icon: 'thermostat',
       title: 'Adjust Thermostat',
       description: 'Please set the thermostat to 68°F (20°C) before leaving.'
     },
     {
-      icon: 'lock-outline',
+      icon: 'lock',
       title: 'Lock Up',
       description: 'Please ensure all doors and windows are locked when you leave.'
     }

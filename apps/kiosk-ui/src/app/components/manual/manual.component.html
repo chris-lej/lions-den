@@ -1,43 +1,36 @@
-<nb-layout>
-  <nb-layout-column>
-    <div class="manual-container">
-      <nb-card class="manual-header">
-        <nb-card-header>
-          <div class="header-content">
-            <nb-icon icon="book-outline" class="header-icon"></nb-icon>
-            <h1>House Manual</h1>
-          </div>
-          <p class="subtitle">Everything you need to know about your stay</p>
-        </nb-card-header>
-      </nb-card>
+<div class="manual-container">
+  <mat-card class="manual-header">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="header-icon">menu_book</mat-icon>
+        <h1>House Manual</h1>
+      </mat-card-title>
+      <p class="subtitle">Everything you need to know about your stay</p>
+    </mat-card-header>
+  </mat-card>
 
-      <nb-accordion class="manual-accordion">
-        @for (section of sections; track section.title) {
-          <nb-accordion-item>
-            <nb-accordion-item-header>
-              <div class="accordion-header">
-                <nb-icon [icon]="section.icon"></nb-icon>
-                <span>{{ section.title }}</span>
-              </div>
-            </nb-accordion-item-header>
-            <nb-accordion-item-body>
-              <ul class="content-list">
-                @for (item of section.content; track item) {
-                  <li>{{ item }}</li>
-                }
-              </ul>
-            </nb-accordion-item-body>
-          </nb-accordion-item>
-        }
-      </nb-accordion>
+  <mat-accordion class="manual-accordion">
+    @for (section of sections; track section.title) {
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>{{ section.icon }}</mat-icon>
+            <span>{{ section.title }}</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul class="content-list">
+          @for (item of section.content; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </mat-expansion-panel>
+    }
+  </mat-accordion>
 
-      <div class="back-button">
-        <button nbButton status="primary" size="large" routerLink="/menu">
-          <nb-icon icon="arrow-back-outline"></nb-icon>
-          Back to Menu
-        </button>
-      </div>
-    </div>
-  </nb-layout-column>
-</nb-layout>
-
+  <div class="back-button">
+    <button mat-raised-button color="primary" routerLink="/menu">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Menu
+    </button>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 # Kiosk UI
 
-Angular + Nebular frontend for Lion's Lair Concierge tablet interface.
+Angular + Material Design frontend for Lion's Lair Concierge tablet interface.
 
 ## Setup
 
@@ -19,7 +19,7 @@ The app will be available at `http://localhost:4201`
 ## Development
 
 - **Angular**: 21.x
-- **Nebular UI**: Latest
+- **Angular Material**: Latest
 - **Hub API**: Connects to `http://localhost:8000` by default
 
 ## Event Stream

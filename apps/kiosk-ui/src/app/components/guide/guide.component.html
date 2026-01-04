@@ -1,76 +1,71 @@
-<nb-layout>
-  <nb-layout-column>
-    <div class="guide-container">
-      <nb-card class="guide-header">
-        <nb-card-header>
-          <div class="header-content">
-            <nb-icon icon="map-outline" class="header-icon"></nb-icon>
-            <h1>Local Area Guide</h1>
+<div class="guide-container">
+  <mat-card class="guide-header">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="header-icon">map</mat-icon>
+        <h1>Local Area Guide</h1>
+      </mat-card-title>
+      <p class="subtitle">Discover the best of the neighborhood</p>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Restaurants">
+          <div class="tab-content">
+            @for (restaurant of restaurants; track restaurant.name) {
+              <div class="guide-item">
+                <div class="item-header">
+                  <mat-icon class="item-icon">{{ restaurant.icon }}</mat-icon>
+                  <div class="item-info">
+                    <h3>{{ restaurant.name }}</h3>
+                    <p class="item-meta">{{ restaurant.cuisine }} • {{ restaurant.distance }}</p>
+                  </div>
+                </div>
+                <p class="item-description">{{ restaurant.description }}</p>
+              </div>
+            }
           </div>
-          <p class="subtitle">Discover the best of the neighborhood</p>
-        </nb-card-header>
-      </nb-card>
+        </mat-tab>
 
-      <nb-card>
-        <nb-card-body>
-          <nb-tabset>
-            <nb-tab tabTitle="Restaurants" tabIcon="restaurant-outline">
-              <div class="tab-content">
-                @for (restaurant of restaurants; track restaurant.name) {
-                  <div class="guide-item">
-                    <div class="item-header">
-                      <nb-icon [icon]="restaurant.icon" class="item-icon"></nb-icon>
-                      <div class="item-info">
-                        <h3>{{ restaurant.name }}</h3>
-                        <p class="item-meta">{{ restaurant.cuisine }} • {{ restaurant.distance }}</p>
-                      </div>
-                    </div>
-                    <p class="item-description">{{ restaurant.description }}</p>
+        <mat-tab label="Attractions">
+          <div class="tab-content">
+            @for (attraction of attractions; track attraction.name) {
+              <div class="guide-item">
+                <div class="item-header">
+                  <mat-icon class="item-icon">{{ attraction.icon }}</mat-icon>
+                  <div class="item-info">
+                    <h3>{{ attraction.name }}</h3>
+                    <p class="item-meta">{{ attraction.type }} • {{ attraction.distance }}</p>
                   </div>
-                }
+                </div>
+                <p class="item-description">{{ attraction.description }}</p>
               </div>
-            </nb-tab>
+            }
+          </div>
+        </mat-tab>
 
-            <nb-tab tabTitle="Attractions" tabIcon="image-outline">
-              <div class="tab-content">
-                @for (attraction of attractions; track attraction.name) {
-                  <div class="guide-item">
-                    <div class="item-header">
-                      <nb-icon [icon]="attraction.icon" class="item-icon"></nb-icon>
-                      <div class="item-info">
-                        <h3>{{ attraction.name }}</h3>
-                        <p class="item-meta">{{ attraction.type }} • {{ attraction.distance }}</p>
-                      </div>
-                    </div>
-                    <p class="item-description">{{ attraction.description }}</p>
-                  </div>
-                }
-              </div>
-            </nb-tab>
+        <mat-tab label="Local Tips">
+          <div class="tab-content">
+            <ul class="tips-list">
+              @for (tip of tips; track tip) {
+                <li>
+                  <mat-icon class="tip-icon">check_circle</mat-icon>
+                  <span>{{ tip }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
 
-            <nb-tab tabTitle="Local Tips" tabIcon="bulb-outline">
-              <div class="tab-content">
-                <ul class="tips-list">
-                  @for (tip of tips; track tip) {
-                    <li>
-                      <nb-icon icon="checkmark-circle-outline" class="tip-icon"></nb-icon>
-                      <span>{{ tip }}</span>
-                    </li>
-                  }
-                </ul>
-              </div>
-            </nb-tab>
-          </nb-tabset>
-        </nb-card-body>
-      </nb-card>
-
-      <div class="back-button">
-        <button nbButton status="primary" size="large" routerLink="/menu">
-          <nb-icon icon="arrow-back-outline"></nb-icon>
-          Back to Menu
-        </button>
-      </div>
-    </div>
-  </nb-layout-column>
-</nb-layout>
-
+  <div class="back-button">
+    <button mat-raised-button color="primary" routerLink="/menu">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Menu
+    </button>
+  </div>
+</div>

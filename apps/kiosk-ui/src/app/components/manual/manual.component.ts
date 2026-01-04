@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { 
-  NbCardModule, 
-  NbButtonModule, 
-  NbLayoutModule, 
-  NbThemeModule,
-  NbAccordionModule,
-  NbIconModule
-} from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 /**
  * House Manual component displaying rules, how-to guides, and emergency information.
@@ -21,13 +16,10 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
   imports: [
     CommonModule, 
     RouterModule, 
-    NbCardModule, 
-    NbButtonModule, 
-    NbLayoutModule, 
-    NbThemeModule,
-    NbAccordionModule,
-    NbIconModule,
-    NbEvaIconsModule
+    MatCardModule, 
+    MatButtonModule,
+    MatIconModule,
+    MatExpansionModule
   ],
   templateUrl: './manual.component.html',
   styleUrl: './manual.component.scss'
@@ -36,7 +28,7 @@ export class ManualComponent {
   sections = [
     {
       title: 'House Rules',
-      icon: 'home-outline',
+      icon: 'home',
       content: [
         'No smoking inside the property',
         'No parties or events without prior approval',
@@ -48,7 +40,7 @@ export class ManualComponent {
     },
     {
       title: 'How-To Guides',
-      icon: 'book-outline',
+      icon: 'menu_book',
       content: [
         'Wi-Fi: Network name and password are in the Wi-Fi section',
         'Heating/Cooling: Thermostat is located in the living room',
@@ -60,7 +52,7 @@ export class ManualComponent {
     },
     {
       title: 'Emergency Information',
-      icon: 'alert-circle-outline',
+      icon: 'warning',
       content: [
         'Emergency Services: Dial 911',
         'Fire Department: 911',
@@ -73,7 +65,7 @@ export class ManualComponent {
     },
     {
       title: 'Important Notes',
-      icon: 'info-outline',
+      icon: 'info',
       content: [
         'First aid kit is located in the bathroom cabinet',
         'Fire extinguisher is in the kitchen',

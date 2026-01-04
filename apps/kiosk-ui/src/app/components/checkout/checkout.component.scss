@@ -7,11 +7,11 @@
 .checkout-header {
   margin-bottom: 2rem;
   
-  nb-card-header {
+  mat-card-header {
     padding: 2rem;
     text-align: center;
     
-    .header-content {
+    mat-card-title {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -20,6 +20,8 @@
       
       .header-icon {
         font-size: 3rem;
+        width: 3rem;
+        height: 3rem;
         color: #667eea;
       }
       
@@ -44,7 +46,7 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   
-  nb-card-body {
+  mat-card-content {
     padding: 2rem;
   }
   
@@ -56,6 +58,8 @@
     
     .time-icon {
       font-size: 4rem;
+      width: 4rem;
+      height: 4rem;
       opacity: 0.9;
     }
     
@@ -78,60 +82,50 @@
   }
 }
 
-nb-card {
+mat-card {
   margin-bottom: 2rem;
   
-  nb-card-header {
-    h2 {
-      font-size: 1.8rem;
-      color: #2c3e50;
-      margin: 0;
-      font-weight: 600;
+  mat-card-header {
+    mat-card-title {
+      h2 {
+        font-size: 1.8rem;
+        color: #2c3e50;
+        margin: 0;
+        font-weight: 600;
+      }
     }
   }
   
-  nb-card-body {
+  mat-card-content {
     padding: 2rem;
   }
 }
 
-.instruction-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1rem 0;
-  
-  .instruction-icon {
-    font-size: 2rem;
-    color: #667eea;
-    margin-top: 0.25rem;
-    flex-shrink: 0;
-  }
-  
-  .instruction-content {
-    flex: 1;
-    
-    h3 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.2rem;
-      color: #2c3e50;
-      font-weight: 600;
-    }
-    
-    p {
-      margin: 0;
-      color: #555;
-      line-height: 1.6;
-      font-size: 1.05rem;
-    }
-  }
+.instruction-icon {
+  color: #667eea;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.instruction-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.instruction-description {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.05rem;
 }
 
 .late-checkout-card {
   background-color: #fff7e6;
   border-left: 4px solid #faad14;
   
-  nb-card-body {
+  mat-card-content {
     padding: 1.5rem;
   }
   
@@ -142,6 +136,8 @@ nb-card {
     
     .info-icon {
       font-size: 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
       color: #faad14;
       margin-top: 0.2rem;
       flex-shrink: 0;
@@ -164,4 +160,3 @@ nb-card {
     min-width: 200px;
   }
 }
-

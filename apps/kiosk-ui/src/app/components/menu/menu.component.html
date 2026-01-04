@@ -1,46 +1,40 @@
-<nb-layout>
-  <nb-layout-column>
-    <div class="menu-container">
-      <nb-card class="menu-header">
-        <nb-card-header>
-          <h1>Lion's Lair Concierge</h1>
-          <p class="subtitle">How can we help you today?</p>
-        </nb-card-header>
-      </nb-card>
-      
-      <div class="menu-grid">
-        @for (item of menuItems; track item.route) {
-          <nb-card class="menu-item-card" [class.disabled]="!item.available">
-            <nb-card-body>
-              <div class="menu-item-content">
-                <nb-icon [icon]="item.icon" class="menu-icon"></nb-icon>
-                <h2>{{ item.title }}</h2>
-                <p>{{ item.description }}</p>
-                @if (item.available) {
-                  <button 
-                    nbButton 
-                    status="primary" 
-                    size="medium"
-                    [routerLink]="item.route"
-                  >
-                    Open
-                  </button>
-                } @else {
-                  <button 
-                    nbButton 
-                    status="basic" 
-                    size="medium"
-                    disabled
-                  >
-                    Coming Soon
-                  </button>
-                }
-              </div>
-            </nb-card-body>
-          </nb-card>
-        }
-      </div>
-    </div>
-  </nb-layout-column>
-</nb-layout>
-
+<div class="menu-container">
+  <mat-card class="menu-header">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Lion's Lair Concierge</h1>
+        <p class="subtitle">How can we help you today?</p>
+      </mat-card-title>
+    </mat-card-header>
+  </mat-card>
+  
+  <div class="menu-grid">
+    @for (item of menuItems; track item.route) {
+      <mat-card class="menu-item-card" [class.disabled]="!item.available">
+        <mat-card-content>
+          <div class="menu-item-content">
+            <mat-icon class="menu-icon">{{ item.icon }}</mat-icon>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.description }}</p>
+            @if (item.available) {
+              <button 
+                mat-raised-button 
+                color="primary"
+                [routerLink]="item.route"
+              >
+                Open
+              </button>
+            } @else {
+              <button 
+                mat-button 
+                disabled
+              >
+                Coming Soon
+              </button>
+            }
+          </div>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</div>

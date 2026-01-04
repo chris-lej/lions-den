@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { 
-  NbCardModule, 
-  NbButtonModule, 
-  NbLayoutModule, 
-  NbThemeModule,
-  NbIconModule,
-  NbTabsetModule
-} from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
 
 /**
  * Local Area Guide component with restaurants, attractions, and local tips.
@@ -21,13 +16,10 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
   imports: [
     CommonModule, 
     RouterModule, 
-    NbCardModule, 
-    NbButtonModule, 
-    NbLayoutModule, 
-    NbThemeModule,
-    NbIconModule,
-    NbTabsetModule,
-    NbEvaIconsModule
+    MatCardModule, 
+    MatButtonModule, 
+    MatIconModule,
+    MatTabsModule
   ],
   templateUrl: './guide.component.html',
   styleUrl: './guide.component.scss'
@@ -39,21 +31,21 @@ export class GuideComponent {
       cuisine: 'American',
       distance: '0.3 miles',
       description: 'Cozy neighborhood spot with great brunch',
-      icon: 'restaurant-outline'
+      icon: 'restaurant'
     },
     {
       name: 'Sushi House',
       cuisine: 'Japanese',
       distance: '0.5 miles',
       description: 'Fresh sushi and sashimi',
-      icon: 'restaurant-outline'
+      icon: 'restaurant'
     },
     {
       name: 'Pizza Corner',
       cuisine: 'Italian',
       distance: '0.2 miles',
       description: 'Authentic wood-fired pizza',
-      icon: 'restaurant-outline'
+      icon: 'restaurant'
     }
   ];
 
@@ -63,21 +55,21 @@ export class GuideComponent {
       type: 'Park',
       distance: '0.8 miles',
       description: 'Beautiful park with walking trails and playground',
-      icon: 'map-outline'
+      icon: 'park'
     },
     {
       name: 'Art Museum',
       type: 'Museum',
       distance: '1.2 miles',
       description: 'Local art and history exhibits',
-      icon: 'image-outline'
+      icon: 'museum'
     },
     {
       name: 'Shopping District',
       type: 'Shopping',
       distance: '0.6 miles',
       description: 'Boutique shops and cafes',
-      icon: 'shopping-bag-outline'
+      icon: 'shopping_bag'
     }
   ];
 

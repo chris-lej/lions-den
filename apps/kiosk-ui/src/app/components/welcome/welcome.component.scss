@@ -12,7 +12,7 @@
   width: 100%;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   
-  nb-card-header {
+  mat-card-header {
     text-align: center;
     padding: 2rem 1rem 1rem;
     
@@ -24,7 +24,7 @@
     }
   }
   
-  nb-card-body {
+  mat-card-content {
     padding: 2rem;
   }
 }
@@ -51,9 +51,10 @@
   
   .name-input {
     width: 100%;
-    font-size: 1.2rem;
-    padding: 1rem;
-    text-align: center;
+    
+    ::ng-deep .mat-mdc-form-field {
+      width: 100%;
+    }
   }
   
   .button-group {
@@ -81,4 +82,3 @@
     min-width: 200px;
   }
 }
-

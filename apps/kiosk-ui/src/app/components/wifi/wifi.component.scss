@@ -7,11 +7,11 @@
 .wifi-card {
   margin-bottom: 2rem;
   
-  nb-card-header {
+  mat-card-header {
     padding: 2rem;
     text-align: center;
     
-    .header-content {
+    mat-card-title {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -19,6 +19,8 @@
       
       .header-icon {
         font-size: 3rem;
+        width: 3rem;
+        height: 3rem;
         color: #667eea;
       }
       
@@ -31,7 +33,7 @@
     }
   }
   
-  nb-card-body {
+  mat-card-content {
     padding: 2rem;
   }
 }
@@ -60,14 +62,16 @@
     
     .wifi-input {
       flex: 1;
-      font-size: 1.2rem;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-    }
-    
-    button {
-      min-width: 48px;
-      height: 48px;
+      
+      ::ng-deep .mat-mdc-form-field {
+        width: 100%;
+      }
+      
+      input {
+        font-family: 'Courier New', monospace;
+        text-align: center;
+        font-size: 1.2rem;
+      }
     }
   }
 }
@@ -86,7 +90,7 @@
     color: #666;
     font-size: 0.95rem;
     
-    nb-icon {
+    mat-icon {
       color: #667eea;
     }
   }
@@ -99,4 +103,3 @@
     min-width: 200px;
   }
 }
-
