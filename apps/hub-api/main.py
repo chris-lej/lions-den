@@ -172,10 +172,11 @@ async def simulate_arrival():
 @app.get("/api/health")
 async def health_check():
     """Health check endpoint."""
+    current_state = state_manager.get_current_state()
     return {
         "status": "healthy",
         "service": "hub-api",
-        "current_state": state_manager.get_current_state().state if state_manager.get_current_state() else "UNKNOWN"
+        "current_state": current_state if current_state else "UNKNOWN"
     }
 
 
