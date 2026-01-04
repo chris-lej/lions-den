@@ -53,7 +53,7 @@ export class WelcomeComponent {
     this.navigateToMenu();
   }
 
-  private navigateToMenu(): void {
+  navigateToMenu(): void {
     this.router.navigate(['/menu']);
   }
 }
