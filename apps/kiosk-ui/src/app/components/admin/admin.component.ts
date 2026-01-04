@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SimulatorService } from '../../services/simulator.service';
 import { EventStreamService, PresenceStateEvent } from '../../services/event-stream.service';
 import { Subscription } from 'rxjs';
@@ -117,11 +117,8 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   private getTranslation(key: string): string {
-    let translation = '';
-    this.translate.get(key).subscribe((value: string) => {
-      translation = value;
-    });
-    return translation || key;
+    // Use instant for synchronous translation in snackbar messages
+    return this.translate.instant(key) || key;
   }
 
   private showSuccess(message: string): void {
