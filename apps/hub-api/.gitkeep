@@ -1,0 +1,14 @@
+# Hub API Application
+
+This directory will contain the Python backend service that acts as the local hub.
+
+**Purpose**:
+- Receives door and presence sensor events (mocked initially)
+- Publishes events via SSE stream to kiosk-ui
+- Provides simulator endpoints for testing without hardware
+- Will integrate with Home Assistant and Zigbee sensors in production
+
+**Tech Stack**: Python (FastAPI or Flask)
+
+**Status**: Placeholder - Implementation begins in Slice 1
+

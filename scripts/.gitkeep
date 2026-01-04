@@ -1,0 +1,12 @@
+# Scripts Directory
+
+This directory will contain build, deployment, and utility scripts.
+
+**Purpose**:
+- Build scripts for monorepo
+- Deployment scripts for Raspberry Pi
+- Development setup scripts
+- Testing and validation scripts
+
+**Status**: Placeholder - Scripts will be added as needed during development
+
