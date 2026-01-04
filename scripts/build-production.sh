@@ -25,8 +25,11 @@ rm -rf $DEPLOY_DIR/hub-api/__pycache__ $DEPLOY_DIR/hub-api/*.pyc 2>/dev/null || 
 
 # Copy Kiosk UI build
 echo "📦 Packaging Kiosk UI..."
-# Angular outputs to dist/kiosk-ui/ in production (contains index.html and assets)
-if [ -d "apps/kiosk-ui/dist/kiosk-ui" ]; then
+# Angular outputs to dist/kiosk-ui/browser/ in production
+if [ -d "apps/kiosk-ui/dist/kiosk-ui/browser" ]; then
+    cp -r apps/kiosk-ui/dist/kiosk-ui/browser/* $DEPLOY_DIR/kiosk-ui/
+elif [ -d "apps/kiosk-ui/dist/kiosk-ui" ]; then
+    # Fallback: copy everything if browser subdirectory doesn't exist
     cp -r apps/kiosk-ui/dist/kiosk-ui/* $DEPLOY_DIR/kiosk-ui/
 else
     echo "❌ Kiosk UI build not found. Run 'npm run build:prod' first."
