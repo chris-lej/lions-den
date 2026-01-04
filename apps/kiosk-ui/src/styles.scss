@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Nebular Theme */
+@use '@nebular/theme/styles/theming' as *;
+@use '@nebular/theme/styles/themes/default' as *;
+
+$nb-themes: nb-register-theme((
+  // Add custom theme variables here
+), default, default);
