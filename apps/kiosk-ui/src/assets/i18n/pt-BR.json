@@ -128,6 +128,39 @@
     "lateCheckout": "Check-out tardio pode estar disponível mediante solicitação. Por favor, entre em contato com o anfitrião pelo menos 24 horas antes.",
     "backToMenu": "Voltar ao Menu"
   },
+  "admin": {
+    "title": "Painel de Simulador de Administrador",
+    "subtitle": "Testar eventos de porta e presença",
+    "currentStatus": "Status Atual",
+    "apiStatus": "Status da API",
+    "presenceState": "Estado de Presença",
+    "healthy": "✓ Saudável",
+    "unhealthy": "✗ Não Saudável",
+    "checking": "Verificando...",
+    "quickActions": "Ações Rápidas",
+    "simulateArrival": "Simular Chegada de Hóspede",
+    "doorEvents": "Eventos de Porta",
+    "doorOpen": "Porta Aberta",
+    "doorClose": "Porta Fechada",
+    "presenceEvents": "Eventos de Presença",
+    "occupancyDetected": "Ocupação Detectada",
+    "occupancyCleared": "Ocupação Limpa",
+    "backToMenu": "Voltar ao Menu",
+    "success": {
+      "doorOpened": "Porta aberta",
+      "doorClosed": "Porta fechada",
+      "occupancyDetected": "Ocupação detectada",
+      "occupancyCleared": "Ocupação limpa",
+      "arrivalSimulated": "Chegada de hóspede simulada"
+    },
+    "error": {
+      "doorOpenFailed": "Falha ao abrir a porta",
+      "doorCloseFailed": "Falha ao fechar a porta",
+      "occupancyFailed": "Falha ao detectar ocupação",
+      "clearOccupancyFailed": "Falha ao limpar ocupação",
+      "arrivalFailed": "Falha ao simular chegada"
+    }
+  },
   "common": {
     "back": "Voltar",
     "backToMenu": "Voltar ao Menu"

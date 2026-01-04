@@ -1,0 +1,128 @@
+<div class="admin-container">
+  <mat-card class="admin-header">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="header-icon">admin_panel_settings</mat-icon>
+        <h1>{{ 'admin.title' | translate }}</h1>
+      </mat-card-title>
+      <p class="subtitle">{{ 'admin.subtitle' | translate }}</p>
+    </mat-card-header>
+  </mat-card>
+
+  <!-- Status Card -->
+  <mat-card class="status-card">
+    <mat-card-content>
+      <div class="status-section">
+        <h2>{{ 'admin.currentStatus' | translate }}</h2>
+        <div class="status-info">
+          <div class="status-item">
+            <span class="label">{{ 'admin.apiStatus' | translate }}:</span>
+            <mat-chip [class]="apiStatus === 'healthy' ? 'status-healthy' : 'status-unhealthy'">
+              {{ apiStatus === 'healthy' ? ('admin.healthy' | translate) : apiStatus === 'unhealthy' ? ('admin.unhealthy' | translate) : ('admin.checking' | translate) }}
+            </mat-chip>
+          </div>
+          <div class="status-item">
+            <span class="label">{{ 'admin.presenceState' | translate }}:</span>
+            <mat-chip [color]="getStateColor()">{{ currentState }}</mat-chip>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Quick Actions -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>{{ 'admin.quickActions' | translate }}</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="action-buttons">
+        <button 
+          mat-raised-button 
+          color="primary"
+          (click)="triggerArrival()"
+          class="action-button"
+        >
+          <mat-icon>login</mat-icon>
+          {{ 'admin.simulateArrival' | translate }}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-divider></mat-divider>
+
+  <!-- Door Events -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>door_front</mat-icon>
+        <h2>{{ 'admin.doorEvents' | translate }}</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="action-buttons">
+        <button 
+          mat-raised-button 
+          color="primary"
+          (click)="triggerDoorOpen()"
+          class="action-button"
+        >
+          <mat-icon>lock_open</mat-icon>
+          {{ 'admin.doorOpen' | translate }}
+        </button>
+        <button 
+          mat-raised-button 
+          color="primary"
+          (click)="triggerDoorClose()"
+          class="action-button"
+        >
+          <mat-icon>lock</mat-icon>
+          {{ 'admin.doorClose' | translate }}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Presence Events -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>sensors</mat-icon>
+        <h2>{{ 'admin.presenceEvents' | translate }}</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="action-buttons">
+        <button 
+          mat-raised-button 
+          color="accent"
+          (click)="triggerPresenceOccupied()"
+          class="action-button"
+        >
+          <mat-icon>person</mat-icon>
+          {{ 'admin.occupancyDetected' | translate }}
+        </button>
+        <button 
+          mat-raised-button 
+          color="primary"
+          (click)="triggerPresenceVacant()"
+          class="action-button"
+        >
+          <mat-icon>person_off</mat-icon>
+          {{ 'admin.occupancyCleared' | translate }}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Back Button -->
+  <div class="back-button">
+    <button mat-button routerLink="/menu">
+      <mat-icon>arrow_back</mat-icon>
+      {{ 'admin.backToMenu' | translate }}
+    </button>
+  </div>
+</div>

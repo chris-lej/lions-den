@@ -128,6 +128,39 @@
     "lateCheckout": "La salida tardía puede estar disponible bajo solicitud. Por favor contacta al anfitrión al menos 24 horas antes.",
     "backToMenu": "Volver al Menú"
   },
+  "admin": {
+    "title": "Panel de Simulador de Administrador",
+    "subtitle": "Probar eventos de puerta y presencia",
+    "currentStatus": "Estado Actual",
+    "apiStatus": "Estado de la API",
+    "presenceState": "Estado de Presencia",
+    "healthy": "✓ Saludable",
+    "unhealthy": "✗ No Saludable",
+    "checking": "Verificando...",
+    "quickActions": "Acciones Rápidas",
+    "simulateArrival": "Simular Llegada de Huésped",
+    "doorEvents": "Eventos de Puerta",
+    "doorOpen": "Puerta Abierta",
+    "doorClose": "Puerta Cerrada",
+    "presenceEvents": "Eventos de Presencia",
+    "occupancyDetected": "Ocupación Detectada",
+    "occupancyCleared": "Ocupación Despejada",
+    "backToMenu": "Volver al Menú",
+    "success": {
+      "doorOpened": "Puerta abierta",
+      "doorClosed": "Puerta cerrada",
+      "occupancyDetected": "Ocupación detectada",
+      "occupancyCleared": "Ocupación despejada",
+      "arrivalSimulated": "Llegada de huésped simulada"
+    },
+    "error": {
+      "doorOpenFailed": "Error al abrir la puerta",
+      "doorCloseFailed": "Error al cerrar la puerta",
+      "occupancyFailed": "Error al detectar ocupación",
+      "clearOccupancyFailed": "Error al despejar ocupación",
+      "arrivalFailed": "Error al simular llegada"
+    }
+  },
   "common": {
     "back": "Volver",
     "backToMenu": "Volver al Menú"

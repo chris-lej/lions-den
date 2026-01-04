@@ -29,5 +29,9 @@ export const routes: Routes = [
   {
     path: 'checkout',
     loadComponent: () => import('./components/checkout/checkout.component').then(m => m.CheckoutComponent)
+  },
+  {
+    path: 'admin',
+    loadComponent: () => import('./components/admin/admin.component').then(m => m.AdminComponent)
   }
 ];

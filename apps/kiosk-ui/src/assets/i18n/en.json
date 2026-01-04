@@ -128,6 +128,39 @@
     "lateCheckout": "Late checkout may be available upon request. Please contact the host at least 24 hours in advance.",
     "backToMenu": "Back to Menu"
   },
+  "admin": {
+    "title": "Admin Simulator Panel",
+    "subtitle": "Test door and presence events",
+    "currentStatus": "Current Status",
+    "apiStatus": "API Status",
+    "presenceState": "Presence State",
+    "healthy": "✓ Healthy",
+    "unhealthy": "✗ Unhealthy",
+    "checking": "Checking...",
+    "quickActions": "Quick Actions",
+    "simulateArrival": "Simulate Guest Arrival",
+    "doorEvents": "Door Events",
+    "doorOpen": "Door Open",
+    "doorClose": "Door Close",
+    "presenceEvents": "Presence Events",
+    "occupancyDetected": "Occupancy Detected",
+    "occupancyCleared": "Occupancy Cleared",
+    "backToMenu": "Back to Menu",
+    "success": {
+      "doorOpened": "Door opened",
+      "doorClosed": "Door closed",
+      "occupancyDetected": "Occupancy detected",
+      "occupancyCleared": "Occupancy cleared",
+      "arrivalSimulated": "Guest arrival simulated"
+    },
+    "error": {
+      "doorOpenFailed": "Failed to trigger door open",
+      "doorCloseFailed": "Failed to trigger door close",
+      "occupancyFailed": "Failed to trigger occupancy",
+      "clearOccupancyFailed": "Failed to clear occupancy",
+      "arrivalFailed": "Failed to simulate arrival"
+    }
+  },
   "common": {
     "back": "Back",
     "backToMenu": "Back to Menu"
