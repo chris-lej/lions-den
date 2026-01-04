@@ -1,0 +1,46 @@
+<nb-layout>
+  <nb-layout-column>
+    <div class="menu-container">
+      <nb-card class="menu-header">
+        <nb-card-header>
+          <h1>Lion's Lair Concierge</h1>
+          <p class="subtitle">How can we help you today?</p>
+        </nb-card-header>
+      </nb-card>
+      
+      <div class="menu-grid">
+        @for (item of menuItems; track item.route) {
+          <nb-card class="menu-item-card" [class.disabled]="!item.available">
+            <nb-card-body>
+              <div class="menu-item-content">
+                <nb-icon [icon]="item.icon" class="menu-icon"></nb-icon>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.description }}</p>
+                @if (item.available) {
+                  <button 
+                    nbButton 
+                    status="primary" 
+                    size="medium"
+                    [routerLink]="item.route"
+                  >
+                    Open
+                  </button>
+                } @else {
+                  <button 
+                    nbButton 
+                    status="basic" 
+                    size="medium"
+                    disabled
+                  >
+                    Coming Soon
+                  </button>
+                }
+              </div>
+            </nb-card-body>
+          </nb-card>
+        }
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>
+

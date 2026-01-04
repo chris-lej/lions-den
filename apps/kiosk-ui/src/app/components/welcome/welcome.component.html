@@ -1,0 +1,63 @@
+<nb-layout>
+  <nb-layout-column>
+    <div class="welcome-container">
+      <nb-card class="welcome-card">
+        <nb-card-header>
+          <h1>Welcome to Lion's Lair!</h1>
+        </nb-card-header>
+        <nb-card-body>
+          <p class="welcome-message">
+            We're delighted to have you here. Make yourself at home!
+          </p>
+          
+          @if (!guestName()) {
+            <div class="name-entry">
+              <p class="name-prompt">What's your name? (Optional)</p>
+              <input 
+                nbInput 
+                type="text" 
+                placeholder="Enter your name"
+                [(ngModel)]="inputValue"
+                (keyup.enter)="onSubmitName()"
+                class="name-input"
+                autofocus
+              />
+              <div class="button-group">
+                <button 
+                  nbButton 
+                  status="primary" 
+                  size="large"
+                  (click)="onSubmitName()"
+                  [disabled]="!inputValue.trim()"
+                >
+                  Continue
+                </button>
+                <button 
+                  nbButton 
+                  status="basic" 
+                  size="large"
+                  (click)="skipNameEntry()"
+                >
+                  Skip
+                </button>
+              </div>
+            </div>
+          } @else {
+            <div class="greeting">
+              <p class="greeting-message">Hello, {{ guestName() }}!</p>
+              <button 
+                nbButton 
+                status="primary" 
+                size="large"
+                (click)="navigateToMenu()"
+              >
+                Continue to Menu
+              </button>
+            </div>
+          }
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </nb-layout-column>
+</nb-layout>
+
