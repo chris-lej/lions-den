@@ -3,9 +3,9 @@
     <mat-card-header>
       <mat-card-title>
         <mat-icon class="header-icon">exit_to_app</mat-icon>
-        <h1>Checkout Instructions</h1>
+        <h1>{{ 'checkout.title' | translate }}</h1>
       </mat-card-title>
-      <p class="subtitle">Everything you need to know before you leave</p>
+      <p class="subtitle">{{ 'checkout.subtitle' | translate }}</p>
     </mat-card-header>
   </mat-card>
 
@@ -14,7 +14,7 @@
       <div class="checkout-time">
         <mat-icon class="time-icon">schedule</mat-icon>
         <div class="time-info">
-          <h2>Checkout Time</h2>
+          <h2>{{ 'checkout.checkoutTime' | translate }}</h2>
           <p class="time-value">{{ checkoutTime }}</p>
         </div>
       </div>
@@ -24,16 +24,16 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>
-        <h2>Checkout Checklist</h2>
+        <h2>{{ 'checkout.checklistTitle' | translate }}</h2>
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <mat-list>
-        @for (instruction of instructions; track instruction.title) {
+        @for (instruction of instructions; track instruction.titleKey) {
           <mat-list-item>
             <mat-icon matListItemIcon class="instruction-icon">{{ instruction.icon }}</mat-icon>
-            <div matListItemTitle class="instruction-title">{{ instruction.title }}</div>
-            <div matListItemLine class="instruction-description">{{ instruction.description }}</div>
+            <div matListItemTitle class="instruction-title">{{ instruction.titleKey | translate: {time: checkoutTime} }}</div>
+            <div matListItemLine class="instruction-description">{{ instruction.descriptionKey | translate: {time: checkoutTime} }}</div>
           </mat-list-item>
         }
       </mat-list>
@@ -45,7 +45,7 @@
       <mat-card-content>
         <div class="late-checkout-content">
           <mat-icon class="info-icon">info</mat-icon>
-          <p>{{ lateCheckout.message }}</p>
+          <p>{{ lateCheckout.messageKey | translate }}</p>
         </div>
       </mat-card-content>
     </mat-card>
@@ -54,7 +54,7 @@
   <div class="back-button">
     <button mat-raised-button color="primary" routerLink="/menu">
       <mat-icon>arrow_back</mat-icon>
-      Back to Menu
+      {{ 'checkout.backToMenu' | translate }}
     </button>
   </div>
 </div>

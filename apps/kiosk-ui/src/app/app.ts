@@ -2,11 +2,14 @@ import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { EventStreamService, PresenceStateEvent } from './services/event-stream.service';
 import { WelcomeStateService } from './services/welcome-state.service';
+import { TranslationService } from './services/translation.service';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, LanguageSelectorComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -18,8 +21,15 @@ export class App implements OnInit, OnDestroy {
   constructor(
     private eventStream: EventStreamService,
     private welcomeState: WelcomeStateService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private translate: TranslateService,
+    private translationService: TranslationService
+  ) {
+    // Initialize translations
+    this.translate.setDefaultLang('en');
+    const savedLang = localStorage.getItem('preferred-language') || 'en';
+    this.translate.use(savedLang);
+  }
 
   ngOnInit(): void {
     // Connect to event stream

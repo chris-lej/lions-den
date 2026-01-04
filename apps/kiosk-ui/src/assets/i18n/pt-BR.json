@@ -1,0 +1,136 @@
+{
+  "welcome": {
+    "title": "Bem-vindo ao Lion's Lair!",
+    "message": "Estamos felizes em tê-lo aqui. Sinta-se em casa!",
+    "namePrompt": "Qual é o seu nome? (Opcional)",
+    "namePlaceholder": "Digite seu nome",
+    "continue": "Continuar",
+    "skip": "Pular",
+    "greeting": "Olá, {{name}}!",
+    "continueToMenu": "Continuar para o Menu"
+  },
+  "menu": {
+    "title": "Concierge Lion's Lair",
+    "subtitle": "Como podemos ajudá-lo hoje?",
+    "houseManual": {
+      "title": "Manual da Casa",
+      "description": "Regras, guias e informações de emergência"
+    },
+    "wifi": {
+      "title": "Informações de Wi-Fi",
+      "description": "Nome da rede e senha"
+    },
+    "guide": {
+      "title": "Guia da Região",
+      "description": "Restaurantes, atrações e dicas locais"
+    },
+    "checkout": {
+      "title": "Instruções de Check-out",
+      "description": "Horário e procedimentos de check-out"
+    },
+    "open": "Abrir",
+    "comingSoon": "Em Breve"
+  },
+  "manual": {
+    "title": "Manual da Casa",
+    "subtitle": "Tudo o que você precisa saber sobre sua estadia",
+    "houseRules": {
+      "title": "Regras da Casa",
+      "items": [
+        "Não fumar dentro da propriedade",
+        "Não são permitidas festas ou eventos sem aprovação prévia",
+        "Horário de silêncio: 22h - 8h",
+        "Ocupação máxima: 4 hóspedes",
+        "Por favor, respeite os vizinhos",
+        "Não são permitidos animais de estimação (a menos que pré-aprovado)"
+      ]
+    },
+    "howTo": {
+      "title": "Guias de Como Fazer",
+      "items": [
+        "Wi-Fi: Nome da rede e senha estão na seção de Wi-Fi",
+        "Aquecimento/Refrigeração: O termostato está localizado na sala de estar",
+        "Cozinha: Todos os aparelhos estão prontos para uso, por favor limpe após o uso",
+        "Lavanderia: Máquina de lavar e secadora estão na área de serviço",
+        "Estacionamento: Uma vaga designada disponível, veja o mapa na seção de guia",
+        "Check-out: Veja a seção de instruções de check-out para detalhes"
+      ]
+    },
+    "emergency": {
+      "title": "Informações de Emergência",
+      "items": [
+        "Serviços de Emergência: Disque 190",
+        "Bombeiros: 193",
+        "Polícia: 190",
+        "Emergência Médica: 192",
+        "Administrador da Propriedade: [Informações de contato a configurar]",
+        "Hospital Mais Próximo: [Localização a configurar]",
+        "Centro de Controle de Intoxicações: 0800-722-6001"
+      ]
+    },
+    "important": {
+      "title": "Notas Importantes",
+      "items": [
+        "Kit de primeiros socorros está localizado no armário do banheiro",
+        "Extintor de incêndio está na cozinha",
+        "Rotas de saída de emergência estão publicadas na parte de trás da porta da frente",
+        "Se precisar de assistência, use o menu do concierge ou entre em contato com o anfitrião"
+      ]
+    },
+    "backToMenu": "Voltar ao Menu"
+  },
+  "wifi": {
+    "title": "Informações de Wi-Fi",
+    "networkLabel": "Nome da Rede (SSID)",
+    "passwordLabel": "Senha",
+    "helpText": "Toque nos botões de copiar para copiar o nome da rede ou senha para sua área de transferência.",
+    "backToMenu": "Voltar ao Menu"
+  },
+  "guide": {
+    "title": "Guia da Região",
+    "subtitle": "Descubra o melhor do bairro",
+    "restaurants": "Restaurantes",
+    "attractions": "Atrações",
+    "localTips": "Dicas Locais",
+    "backToMenu": "Voltar ao Menu"
+  },
+  "checkout": {
+    "title": "Instruções de Check-out",
+    "subtitle": "Tudo o que você precisa saber antes de sair",
+    "checkoutTime": "Horário de Check-out",
+    "checklistTitle": "Lista de Verificação de Check-out",
+    "instructions": {
+      "checkoutTime": {
+        "title": "Horário de Check-out",
+        "description": "Por favor, faça o check-out até {{time}} na sua data de partida."
+      },
+      "leaveKeys": {
+        "title": "Deixar Chaves",
+        "description": "Por favor, deixe todas as chaves no balcão da cozinha ou no cofre."
+      },
+      "disposeTrash": {
+        "title": "Descartar Lixo",
+        "description": "Por favor, retire o lixo e coloque nos recipientes designados do lado de fora."
+      },
+      "dishes": {
+        "title": "Pratos",
+        "description": "Por favor, lave e guarde os pratos que você usou durante sua estadia."
+      },
+      "adjustThermostat": {
+        "title": "Ajustar Termostato",
+        "description": "Por favor, ajuste o termostato para 68°F (20°C) antes de sair."
+      },
+      "lockUp": {
+        "title": "Trancar",
+        "description": "Por favor, certifique-se de que todas as portas e janelas estejam trancadas quando sair."
+      }
+    },
+    "lateCheckout": "Check-out tardio pode estar disponível mediante solicitação. Por favor, entre em contato com o anfitrião pelo menos 24 horas antes.",
+    "backToMenu": "Voltar ao Menu"
+  },
+  "common": {
+    "back": "Voltar",
+    "backToMenu": "Voltar ao Menu"
+  }
+}
+

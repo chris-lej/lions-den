@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TranslateModule } from '@ngx-translate/core';
 import { WelcomeStateService } from '../../services/welcome-state.service';
 
 /**
@@ -21,7 +22,8 @@ import { WelcomeStateService } from '../../services/welcome-state.service';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    TranslateModule
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss'

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 /**
  * House Manual component displaying rules, how-to guides, and emergency information.
@@ -19,59 +20,62 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatCardModule, 
     MatButtonModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    TranslateModule
   ],
   templateUrl: './manual.component.html',
   styleUrl: './manual.component.scss'
 })
-export class ManualComponent {
-  sections = [
-    {
-      title: 'House Rules',
-      icon: 'home',
-      content: [
-        'No smoking inside the property',
-        'No parties or events without prior approval',
-        'Quiet hours: 10 PM - 8 AM',
-        'Maximum occupancy: 4 guests',
-        'Please respect the neighbors',
-        'No pets allowed (unless pre-approved)'
-      ]
-    },
-    {
-      title: 'How-To Guides',
-      icon: 'menu_book',
-      content: [
-        'Wi-Fi: Network name and password are in the Wi-Fi section',
-        'Heating/Cooling: Thermostat is located in the living room',
-        'Kitchen: All appliances are ready to use, please clean after use',
-        'Laundry: Washer and dryer are in the utility room',
-        'Parking: One designated spot available, see map in guide section',
-        'Checkout: See checkout instructions section for details'
-      ]
-    },
-    {
-      title: 'Emergency Information',
-      icon: 'warning',
-      content: [
-        'Emergency Services: Dial 911',
-        'Fire Department: 911',
-        'Police: 911',
-        'Medical Emergency: 911',
-        'Property Manager: [Contact info to be configured]',
-        'Nearest Hospital: [Location to be configured]',
-        'Poison Control: 1-800-222-1222'
-      ]
-    },
-    {
-      title: 'Important Notes',
-      icon: 'info',
-      content: [
-        'First aid kit is located in the bathroom cabinet',
-        'Fire extinguisher is in the kitchen',
-        'Emergency exit routes are posted on the back of the front door',
-        'If you need assistance, use the concierge menu or contact the host'
-      ]
-    }
-  ];
+export class ManualComponent implements OnInit {
+  sections: Array<{
+    titleKey: string;
+    icon: string;
+    items: string[];
+  }> = [];
+
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit(): void {
+    this.loadSections();
+    // Reload when language changes
+    this.translate.onLangChange.subscribe(() => {
+      this.loadSections();
+    });
+  }
+
+  private loadSections(): void {
+    this.translate.get([
+      'manual.houseRules.title',
+      'manual.houseRules.items',
+      'manual.howTo.title',
+      'manual.howTo.items',
+      'manual.emergency.title',
+      'manual.emergency.items',
+      'manual.important.title',
+      'manual.important.items'
+    ]).subscribe(translations => {
+      this.sections = [
+        {
+          titleKey: 'manual.houseRules.title',
+          icon: 'home',
+          items: translations['manual.houseRules.items'] as string[]
+        },
+        {
+          titleKey: 'manual.howTo.title',
+          icon: 'menu_book',
+          items: translations['manual.howTo.items'] as string[]
+        },
+        {
+          titleKey: 'manual.emergency.title',
+          icon: 'warning',
+          items: translations['manual.emergency.items'] as string[]
+        },
+        {
+          titleKey: 'manual.important.title',
+          icon: 'info',
+          items: translations['manual.important.items'] as string[]
+        }
+      ];
+    });
+  }
 }

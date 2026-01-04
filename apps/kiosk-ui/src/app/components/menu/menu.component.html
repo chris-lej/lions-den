@@ -2,8 +2,8 @@
   <mat-card class="menu-header">
     <mat-card-header>
       <mat-card-title>
-        <h1>Lion's Lair Concierge</h1>
-        <p class="subtitle">How can we help you today?</p>
+        <h1>{{ 'menu.title' | translate }}</h1>
+        <p class="subtitle">{{ 'menu.subtitle' | translate }}</p>
       </mat-card-title>
     </mat-card-header>
   </mat-card>
@@ -14,22 +14,22 @@
         <mat-card-content>
           <div class="menu-item-content">
             <mat-icon class="menu-icon">{{ item.icon }}</mat-icon>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.description }}</p>
+            <h2>{{ item.titleKey | translate }}</h2>
+            <p>{{ item.descriptionKey | translate }}</p>
             @if (item.available) {
               <button 
                 mat-raised-button 
                 color="primary"
                 [routerLink]="item.route"
               >
-                Open
+                {{ 'menu.open' | translate }}
               </button>
             } @else {
               <button 
                 mat-button 
                 disabled
               >
-                Coming Soon
+                {{ 'menu.comingSoon' | translate }}
               </button>
             }
           </div>

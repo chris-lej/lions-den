@@ -3,13 +3,13 @@
     <mat-card-header>
       <mat-card-title>
         <mat-icon class="header-icon">wifi</mat-icon>
-        <h1>Wi-Fi Information</h1>
+        <h1>{{ 'wifi.title' | translate }}</h1>
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="wifi-info">
         <div class="info-section">
-          <label>Network Name (SSID)</label>
+          <label>{{ 'wifi.networkLabel' | translate }}</label>
           <div class="value-container">
             <mat-form-field appearance="outline" class="wifi-input">
               <input matInput [value]="wifiNetwork" readonly />
@@ -25,7 +25,7 @@
         </div>
 
         <div class="info-section">
-          <label>Password</label>
+          <label>{{ 'wifi.passwordLabel' | translate }}</label>
           <div class="value-container">
             <mat-form-field appearance="outline" class="wifi-input">
               <input 
@@ -55,7 +55,7 @@
         <div class="help-text">
           <p>
             <mat-icon>info</mat-icon>
-            Tap the copy buttons to copy the network name or password to your clipboard.
+            {{ 'wifi.helpText' | translate }}
           </p>
         </div>
       </div>
@@ -65,7 +65,7 @@
   <div class="back-button">
     <button mat-raised-button color="primary" routerLink="/menu">
       <mat-icon>arrow_back</mat-icon>
-      Back to Menu
+      {{ 'wifi.backToMenu' | translate }}
     </button>
   </div>
 </div>

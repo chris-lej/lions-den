@@ -1,0 +1,136 @@
+{
+  "welcome": {
+    "title": "Welcome to Lion's Lair!",
+    "message": "We're delighted to have you here. Make yourself at home!",
+    "namePrompt": "What's your name? (Optional)",
+    "namePlaceholder": "Enter your name",
+    "continue": "Continue",
+    "skip": "Skip",
+    "greeting": "Hello, {{name}}!",
+    "continueToMenu": "Continue to Menu"
+  },
+  "menu": {
+    "title": "Lion's Lair Concierge",
+    "subtitle": "How can we help you today?",
+    "houseManual": {
+      "title": "House Manual",
+      "description": "Rules, how-to guides, and emergency information"
+    },
+    "wifi": {
+      "title": "Wi-Fi Information",
+      "description": "Network name and password"
+    },
+    "guide": {
+      "title": "Local Area Guide",
+      "description": "Restaurants, attractions, and local tips"
+    },
+    "checkout": {
+      "title": "Checkout Instructions",
+      "description": "Checkout time and procedures"
+    },
+    "open": "Open",
+    "comingSoon": "Coming Soon"
+  },
+  "manual": {
+    "title": "House Manual",
+    "subtitle": "Everything you need to know about your stay",
+    "houseRules": {
+      "title": "House Rules",
+      "items": [
+        "No smoking inside the property",
+        "No parties or events without prior approval",
+        "Quiet hours: 10 PM - 8 AM",
+        "Maximum occupancy: 4 guests",
+        "Please respect the neighbors",
+        "No pets allowed (unless pre-approved)"
+      ]
+    },
+    "howTo": {
+      "title": "How-To Guides",
+      "items": [
+        "Wi-Fi: Network name and password are in the Wi-Fi section",
+        "Heating/Cooling: Thermostat is located in the living room",
+        "Kitchen: All appliances are ready to use, please clean after use",
+        "Laundry: Washer and dryer are in the utility room",
+        "Parking: One designated spot available, see map in guide section",
+        "Checkout: See checkout instructions section for details"
+      ]
+    },
+    "emergency": {
+      "title": "Emergency Information",
+      "items": [
+        "Emergency Services: Dial 911",
+        "Fire Department: 911",
+        "Police: 911",
+        "Medical Emergency: 911",
+        "Property Manager: [Contact info to be configured]",
+        "Nearest Hospital: [Location to be configured]",
+        "Poison Control: 1-800-222-1222"
+      ]
+    },
+    "important": {
+      "title": "Important Notes",
+      "items": [
+        "First aid kit is located in the bathroom cabinet",
+        "Fire extinguisher is in the kitchen",
+        "Emergency exit routes are posted on the back of the front door",
+        "If you need assistance, use the concierge menu or contact the host"
+      ]
+    },
+    "backToMenu": "Back to Menu"
+  },
+  "wifi": {
+    "title": "Wi-Fi Information",
+    "networkLabel": "Network Name (SSID)",
+    "passwordLabel": "Password",
+    "helpText": "Tap the copy buttons to copy the network name or password to your clipboard.",
+    "backToMenu": "Back to Menu"
+  },
+  "guide": {
+    "title": "Local Area Guide",
+    "subtitle": "Discover the best of the neighborhood",
+    "restaurants": "Restaurants",
+    "attractions": "Attractions",
+    "localTips": "Local Tips",
+    "backToMenu": "Back to Menu"
+  },
+  "checkout": {
+    "title": "Checkout Instructions",
+    "subtitle": "Everything you need to know before you leave",
+    "checkoutTime": "Checkout Time",
+    "checklistTitle": "Checkout Checklist",
+    "instructions": {
+      "checkoutTime": {
+        "title": "Checkout Time",
+        "description": "Please check out by {{time}} on your departure date."
+      },
+      "leaveKeys": {
+        "title": "Leave Keys",
+        "description": "Please leave all keys on the kitchen counter or in the lockbox."
+      },
+      "disposeTrash": {
+        "title": "Dispose of Trash",
+        "description": "Please take out trash and place in the designated bins outside."
+      },
+      "dishes": {
+        "title": "Dishes",
+        "description": "Please wash and put away any dishes you used during your stay."
+      },
+      "adjustThermostat": {
+        "title": "Adjust Thermostat",
+        "description": "Please set the thermostat to 68°F (20°C) before leaving."
+      },
+      "lockUp": {
+        "title": "Lock Up",
+        "description": "Please ensure all doors and windows are locked when you leave."
+      }
+    },
+    "lateCheckout": "Late checkout may be available upon request. Please contact the host at least 24 hours in advance.",
+    "backToMenu": "Back to Menu"
+  },
+  "common": {
+    "back": "Back",
+    "backToMenu": "Back to Menu"
+  }
+}
+

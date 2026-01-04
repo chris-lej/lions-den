@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * Wi-Fi Information component displaying network name and password.
@@ -21,7 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule, 
     MatInputModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    TranslateModule
   ],
   templateUrl: './wifi.component.html',
   styleUrl: './wifi.component.scss'

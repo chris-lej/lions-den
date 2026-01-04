@@ -3,23 +3,23 @@
     <mat-card-header>
       <mat-card-title>
         <mat-icon class="header-icon">menu_book</mat-icon>
-        <h1>House Manual</h1>
+        <h1>{{ 'manual.title' | translate }}</h1>
       </mat-card-title>
-      <p class="subtitle">Everything you need to know about your stay</p>
+      <p class="subtitle">{{ 'manual.subtitle' | translate }}</p>
     </mat-card-header>
   </mat-card>
 
   <mat-accordion class="manual-accordion">
-    @for (section of sections; track section.title) {
+    @for (section of sections; track section.titleKey) {
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
             <mat-icon>{{ section.icon }}</mat-icon>
-            <span>{{ section.title }}</span>
+            <span>{{ section.titleKey | translate }}</span>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <ul class="content-list">
-          @for (item of section.content; track item) {
+          @for (item of section.items; track item) {
             <li>{{ item }}</li>
           }
         </ul>
@@ -30,7 +30,7 @@
   <div class="back-button">
     <button mat-raised-button color="primary" routerLink="/menu">
       <mat-icon>arrow_back</mat-icon>
-      Back to Menu
+      {{ 'manual.backToMenu' | translate }}
     </button>
   </div>
 </div>

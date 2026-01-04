@@ -3,16 +3,16 @@
     <mat-card-header>
       <mat-card-title>
         <mat-icon class="header-icon">map</mat-icon>
-        <h1>Local Area Guide</h1>
+        <h1>{{ 'guide.title' | translate }}</h1>
       </mat-card-title>
-      <p class="subtitle">Discover the best of the neighborhood</p>
+      <p class="subtitle">{{ 'guide.subtitle' | translate }}</p>
     </mat-card-header>
   </mat-card>
 
   <mat-card>
     <mat-card-content>
       <mat-tab-group>
-        <mat-tab label="Restaurants">
+        <mat-tab [label]="'guide.restaurants' | translate">
           <div class="tab-content">
             @for (restaurant of restaurants; track restaurant.name) {
               <div class="guide-item">
@@ -29,7 +29,7 @@
           </div>
         </mat-tab>
 
-        <mat-tab label="Attractions">
+        <mat-tab [label]="'guide.attractions' | translate">
           <div class="tab-content">
             @for (attraction of attractions; track attraction.name) {
               <div class="guide-item">
@@ -46,7 +46,7 @@
           </div>
         </mat-tab>
 
-        <mat-tab label="Local Tips">
+        <mat-tab [label]="'guide.localTips' | translate">
           <div class="tab-content">
             <ul class="tips-list">
               @for (tip of tips; track tip) {
@@ -65,7 +65,7 @@
   <div class="back-button">
     <button mat-raised-button color="primary" routerLink="/menu">
       <mat-icon>arrow_back</mat-icon>
-      Back to Menu
+      {{ 'guide.backToMenu' | translate }}
     </button>
   </div>
 </div>

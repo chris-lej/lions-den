@@ -2,19 +2,19 @@
   <mat-card class="welcome-card">
     <mat-card-header>
       <mat-card-title>
-        <h1>Welcome to Lion's Lair!</h1>
+        <h1>{{ 'welcome.title' | translate }}</h1>
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <p class="welcome-message">
-        We're delighted to have you here. Make yourself at home!
+        {{ 'welcome.message' | translate }}
       </p>
       
       @if (!guestName()) {
         <div class="name-entry">
-          <p class="name-prompt">What's your name? (Optional)</p>
+          <p class="name-prompt">{{ 'welcome.namePrompt' | translate }}</p>
           <mat-form-field appearance="outline" class="name-input">
-            <mat-label>Enter your name</mat-label>
+            <mat-label>{{ 'welcome.namePlaceholder' | translate }}</mat-label>
             <input 
               matInput 
               type="text" 
@@ -30,25 +30,25 @@
               (click)="onSubmitName()"
               [disabled]="!inputValue.trim()"
             >
-              Continue
+              {{ 'welcome.continue' | translate }}
             </button>
             <button 
               mat-button 
               (click)="skipNameEntry()"
             >
-              Skip
+              {{ 'welcome.skip' | translate }}
             </button>
           </div>
         </div>
       } @else {
         <div class="greeting">
-          <p class="greeting-message">Hello, {{ guestName() }}!</p>
+          <p class="greeting-message">{{ 'welcome.greeting' | translate: {name: guestName()} }}</p>
           <button 
             mat-raised-button 
             color="primary"
             (click)="navigateToMenu()"
           >
-            Continue to Menu
+            {{ 'welcome.continueToMenu' | translate }}
           </button>
         </div>
       }
