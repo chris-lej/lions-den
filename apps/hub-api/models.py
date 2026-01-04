@@ -3,7 +3,7 @@ Event models matching the Event Contract in docs/process/EVENTS.md
 """
 
 from pydantic import BaseModel, Field
-from typing import Literal, Optional
+from typing import Literal, Optional, Union
 
 
 class DoorEvent(BaseModel):
@@ -31,5 +31,5 @@ class PresenceStateEvent(BaseModel):
 
 
 # Union type for event publishing
-Event = DoorEvent | PresenceEvent
+Event = Union[DoorEvent, PresenceEvent]
 

@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 import asyncio
 from datetime import datetime
-from typing import AsyncGenerator
+from typing import AsyncGenerator, Union
 import json
 
 from models import DoorEvent, PresenceEvent, PresenceStateEvent
@@ -74,7 +74,7 @@ async def stream_events():
 
 
 @app.post("/api/events/publish")
-async def publish_event(event: DoorEvent | PresenceEvent):
+async def publish_event(event: Union[DoorEvent, PresenceEvent]):
     """
     Publish a door or presence event.
     
