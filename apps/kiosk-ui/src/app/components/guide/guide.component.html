@@ -1,0 +1,76 @@
+<nb-layout>
+  <nb-layout-column>
+    <div class="guide-container">
+      <nb-card class="guide-header">
+        <nb-card-header>
+          <div class="header-content">
+            <nb-icon icon="map-outline" class="header-icon"></nb-icon>
+            <h1>Local Area Guide</h1>
+          </div>
+          <p class="subtitle">Discover the best of the neighborhood</p>
+        </nb-card-header>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-body>
+          <nb-tabset>
+            <nb-tab tabTitle="Restaurants" tabIcon="restaurant-outline">
+              <div class="tab-content">
+                @for (restaurant of restaurants; track restaurant.name) {
+                  <div class="guide-item">
+                    <div class="item-header">
+                      <nb-icon [icon]="restaurant.icon" class="item-icon"></nb-icon>
+                      <div class="item-info">
+                        <h3>{{ restaurant.name }}</h3>
+                        <p class="item-meta">{{ restaurant.cuisine }} • {{ restaurant.distance }}</p>
+                      </div>
+                    </div>
+                    <p class="item-description">{{ restaurant.description }}</p>
+                  </div>
+                }
+              </div>
+            </nb-tab>
+
+            <nb-tab tabTitle="Attractions" tabIcon="image-outline">
+              <div class="tab-content">
+                @for (attraction of attractions; track attraction.name) {
+                  <div class="guide-item">
+                    <div class="item-header">
+                      <nb-icon [icon]="attraction.icon" class="item-icon"></nb-icon>
+                      <div class="item-info">
+                        <h3>{{ attraction.name }}</h3>
+                        <p class="item-meta">{{ attraction.type }} • {{ attraction.distance }}</p>
+                      </div>
+                    </div>
+                    <p class="item-description">{{ attraction.description }}</p>
+                  </div>
+                }
+              </div>
+            </nb-tab>
+
+            <nb-tab tabTitle="Local Tips" tabIcon="bulb-outline">
+              <div class="tab-content">
+                <ul class="tips-list">
+                  @for (tip of tips; track tip) {
+                    <li>
+                      <nb-icon icon="checkmark-circle-outline" class="tip-icon"></nb-icon>
+                      <span>{{ tip }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </nb-tab>
+          </nb-tabset>
+        </nb-card-body>
+      </nb-card>
+
+      <div class="back-button">
+        <button nbButton status="primary" size="large" routerLink="/menu">
+          <nb-icon icon="arrow-back-outline"></nb-icon>
+          Back to Menu
+        </button>
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>
+

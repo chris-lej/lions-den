@@ -1,29 +1,53 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { NbCardModule, NbButtonModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
+import { 
+  NbCardModule, 
+  NbButtonModule, 
+  NbLayoutModule, 
+  NbThemeModule,
+  NbIconModule,
+  NbInputModule
+} from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
+/**
+ * Wi-Fi Information component displaying network name and password.
+ * Offline-first content.
+ */
 @Component({
   selector: 'app-wifi',
   standalone: true,
-  imports: [CommonModule, RouterModule, NbCardModule, NbButtonModule, NbLayoutModule, NbThemeModule],
-  template: `
-    <nb-layout>
-      <nb-layout-column>
-        <div style="padding: 2rem; max-width: 800px; margin: 0 auto;">
-          <nb-card>
-            <nb-card-header>
-              <h1>Wi-Fi Information</h1>
-            </nb-card-header>
-            <nb-card-body>
-              <p>Wi-Fi information will be implemented in Slice 3.</p>
-              <button nbButton status="primary" routerLink="/menu">Back to Menu</button>
-            </nb-card-body>
-          </nb-card>
-        </div>
-      </nb-layout-column>
-    </nb-layout>
-  `
+  imports: [
+    CommonModule, 
+    RouterModule, 
+    NbCardModule, 
+    NbButtonModule, 
+    NbLayoutModule, 
+    NbThemeModule,
+    NbIconModule,
+    NbInputModule,
+    NbEvaIconsModule
+  ],
+  templateUrl: './wifi.component.html',
+  styleUrl: './wifi.component.scss'
 })
-export class WifiComponent {}
+export class WifiComponent {
+  // TODO: These should be configurable via admin panel or environment
+  wifiNetwork = 'LionsLair_Guest';
+  wifiPassword = 'Welcome2024!';
+  showPassword = false;
 
+  copyToClipboard(text: string): void {
+    navigator.clipboard.writeText(text).then(() => {
+      // Could show a toast notification here
+      console.log('Copied to clipboard:', text);
+    }).catch(err => {
+      console.error('Failed to copy:', err);
+    });
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+}

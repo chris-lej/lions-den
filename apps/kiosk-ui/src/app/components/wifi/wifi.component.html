@@ -1,0 +1,85 @@
+<nb-layout>
+  <nb-layout-column>
+    <div class="wifi-container">
+      <nb-card class="wifi-card">
+        <nb-card-header>
+          <div class="header-content">
+            <nb-icon icon="wifi-outline" class="header-icon"></nb-icon>
+            <h1>Wi-Fi Information</h1>
+          </div>
+        </nb-card-header>
+        <nb-card-body>
+          <div class="wifi-info">
+            <div class="info-section">
+              <label>Network Name (SSID)</label>
+              <div class="value-container">
+                <input 
+                  nbInput 
+                  type="text" 
+                  [value]="wifiNetwork" 
+                  readonly
+                  class="wifi-input"
+                />
+                <button 
+                  nbButton 
+                  status="basic" 
+                  size="small"
+                  (click)="copyToClipboard(wifiNetwork)"
+                  title="Copy to clipboard"
+                >
+                  <nb-icon icon="copy-outline"></nb-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="info-section">
+              <label>Password</label>
+              <div class="value-container">
+                <input 
+                  nbInput 
+                  [type]="showPassword ? 'text' : 'password'" 
+                  [value]="wifiPassword" 
+                  readonly
+                  class="wifi-input"
+                />
+                <button 
+                  nbButton 
+                  status="basic" 
+                  size="small"
+                  (click)="togglePasswordVisibility()"
+                  [title]="showPassword ? 'Hide password' : 'Show password'"
+                >
+                  <nb-icon [icon]="showPassword ? 'eye-off-outline' : 'eye-outline'"></nb-icon>
+                </button>
+                <button 
+                  nbButton 
+                  status="basic" 
+                  size="small"
+                  (click)="copyToClipboard(wifiPassword)"
+                  title="Copy to clipboard"
+                >
+                  <nb-icon icon="copy-outline"></nb-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="help-text">
+              <p>
+                <nb-icon icon="info-outline"></nb-icon>
+                Tap the copy buttons to copy the network name or password to your clipboard.
+              </p>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <div class="back-button">
+        <button nbButton status="primary" size="large" routerLink="/menu">
+          <nb-icon icon="arrow-back-outline"></nb-icon>
+          Back to Menu
+        </button>
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>
+

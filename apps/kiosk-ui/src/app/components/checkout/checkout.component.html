@@ -1,0 +1,67 @@
+<nb-layout>
+  <nb-layout-column>
+    <div class="checkout-container">
+      <nb-card class="checkout-header">
+        <nb-card-header>
+          <div class="header-content">
+            <nb-icon icon="log-out-outline" class="header-icon"></nb-icon>
+            <h1>Checkout Instructions</h1>
+          </div>
+          <p class="subtitle">Everything you need to know before you leave</p>
+        </nb-card-header>
+      </nb-card>
+
+      <nb-card class="checkout-time-card">
+        <nb-card-body>
+          <div class="checkout-time">
+            <nb-icon icon="clock-outline" class="time-icon"></nb-icon>
+            <div class="time-info">
+              <h2>Checkout Time</h2>
+              <p class="time-value">{{ checkoutTime }}</p>
+            </div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+      <nb-card>
+        <nb-card-header>
+          <h2>Checkout Checklist</h2>
+        </nb-card-header>
+        <nb-card-body>
+          <nb-list>
+            @for (instruction of instructions; track instruction.title) {
+              <nb-list-item>
+                <div class="instruction-item">
+                  <nb-icon [icon]="instruction.icon" class="instruction-icon"></nb-icon>
+                  <div class="instruction-content">
+                    <h3>{{ instruction.title }}</h3>
+                    <p>{{ instruction.description }}</p>
+                  </div>
+                </div>
+              </nb-list-item>
+            }
+          </nb-list>
+        </nb-card-body>
+      </nb-card>
+
+      @if (lateCheckout.available) {
+        <nb-card class="late-checkout-card">
+          <nb-card-body>
+            <div class="late-checkout-content">
+              <nb-icon icon="info-outline" class="info-icon"></nb-icon>
+              <p>{{ lateCheckout.message }}</p>
+            </div>
+          </nb-card-body>
+        </nb-card>
+      }
+
+      <div class="back-button">
+        <button nbButton status="primary" size="large" routerLink="/menu">
+          <nb-icon icon="arrow-back-outline"></nb-icon>
+          Back to Menu
+        </button>
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>
+
