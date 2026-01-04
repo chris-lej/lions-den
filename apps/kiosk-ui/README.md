@@ -41,7 +41,7 @@ src/
 │   ├── app.ts                       # Root component
 │   ├── app.html                     # Root template
 │   └── app.routes.ts                # Routing configuration
-└── styles.scss                      # Global styles + Nebular theme
+└── styles.scss                      # Global styles + Material theme
 ```
 
 ## Next Steps (Slice 2+)

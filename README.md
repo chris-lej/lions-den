@@ -26,7 +26,7 @@ Lion's Lair Concierge is a local-first hybrid system that:
 ```
 lions-den-concierge/
 ├── apps/
-│   ├── kiosk-ui/          # Angular + Nebular frontend
+│   ├── kiosk-ui/          # Angular + Material Design frontend
 │   └── hub-api/           # Python backend
 ├── libs/
 │   └── shared/            # Shared code and types
