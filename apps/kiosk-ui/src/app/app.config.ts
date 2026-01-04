@@ -2,7 +2,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { MissingTranslationHandler, MissingTranslationHandlerParams, provideTranslateService, TranslateNoOpCompiler, TranslateDefaultParser } from '@ngx-translate/core';
+import { MissingTranslationHandler, MissingTranslationHandlerParams, provideTranslateService, provideTranslateCompiler, provideTranslateParser, TranslateNoOpCompiler, TranslateDefaultParser } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
@@ -20,9 +20,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(),
     provideHttpClient(withFetch()),
+    provideTranslateCompiler(TranslateNoOpCompiler),
+    provideTranslateParser(TranslateDefaultParser),
     ...provideTranslateService({
-      compiler: TranslateNoOpCompiler,
-      parser: TranslateDefaultParser,
       missingTranslationHandler: CustomMissingTranslationHandler
     }),
     ...provideTranslateHttpLoader({
