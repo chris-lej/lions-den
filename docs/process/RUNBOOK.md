@@ -52,7 +52,7 @@ npm install
 npm start
 ```
 
-The app will be available at `http://localhost:4200`
+The app will be available at `http://localhost:4201`
 
 ## Testing the Event Stream
 
@@ -92,7 +92,7 @@ curl -X POST http://localhost:8000/api/simulator/presence/vacant
 
 ### 4. Verify Event Stream
 
-Open the kiosk UI at `http://localhost:4200` and check the browser console. You should see:
+Open the kiosk UI at `http://localhost:4201` and check the browser console. You should see:
 - "Connected to event stream"
 - Presence state changes when you trigger simulator endpoints
 
